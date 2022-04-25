@@ -13,13 +13,11 @@ function nactiHodnotu() {
 let hodnota = localStorage.getItem('mojehodnota');
 
 	// pokud hodnota nexistuje, vypíšeme chybu
-		if (hodnota === null || hodnota === undefined) {vysledek.textContent="V local storage neexistuje 'mojehodnota'."}
+		if (hodnota === null || hodnota === undefined) 
+		{vysledek.textContent="V local storage neexistuje 'mojehodnota'."}
 	// jinak hodnota existuje a vypíšeme ji
 		else {vysledek.textContent=hodnota;};
 }
-
-
-
 
 
 // funkce pro uložení hodnoty do Local Storage
@@ -36,6 +34,11 @@ let hodnota = document.querySelector('#hodnota').value ;
 
 // funkce pro smazání hodnoty z Local Storage
 function smazatHodnotu() {
+	if (localStorage.mojehodnota !== null)
+	{
+		localStorage.removeItem('mojehodnota');
+	}
+	
 	// smažeme hodnotu uloženou pod jménem "mojehodnota",
 	// pokud takový klíč neexistuje, nestane se nic
 
